@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>DolahBot - Dashboard</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="https://adminlte.io/themes/v3/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="/css/main800.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!-- Meta tags -->
+    <meta name="title" content="DolahBot">
+    <meta name="og:title" content="DolahBot">
+    <meta name="description" content="افضل بوت لخدمة سيرفرات قراند / تفعيل - سجن - بنك - حقيبة .">
+    <meta name="og:description" content="افضل بوت لخدمة سيرفرات قراند / تفعيل - سجن - بنك - حقيبة .">
+    <meta name="og:image" content="https://i8.ae/2Sme9">
+    <meta name="image" content="https://i8.ae/2Sme9">
+    <meta name="theme-color" content="#00efca">
+    <meta name="og:theme-color" content="#00efca">
+    <link rel="icon" type="image/png" href="https://i8.ae/2Sme9"/>
+  </head>
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<div class="wrapper">
+  <nav class="main-header navbar navbar-expand navbar-white-black navbar-dark">
+    <ul class="navbar-nav bars-op">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+    </ul>
+  </nav>
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <a class="brand-link">
+      <img src="<%- user.avatarURL %>" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light"> | <%- user.username %></span>
+    </a>
+    <div class="sidebar">
+      <div class="mt-3 pb-3 mb-3 d-flex"></div>
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false"> 
+          <li class="nav-item">
+            <a href="/" class="nav-link"><i class="nav-icon fas fa-home"></i><p> الصفحة الرئيسية</p></a>
+          </li>      
+          <li class="nav-header">Settings | الأعدادات</li>
+          <li class="nav-item">
+            <a class="nav-link active"><i class="fas fa-tags"></i><p> إعدادات البريميوم <span class="badge badge-success">حصري</span></p></a>
+          </li> 
+          <% if(admins) { %>
+          <li class="nav-header"><span class="badge badge-danger"> خاص للأدمن</span></li>
+          <li class="nav-item">
+            <a class="nav-link"><i class="fas fa-users-cog"></i><p> اضافة وازالة ادمن <span class="badge badge-danger">خاص للأدمن</span></p></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"><i class="fas fa-user-plus"></i><p> اضافة بوتات بريموم <span class="badge badge-danger">خاص للأدمن</span></p></a>
+          </li> 
+           <li class="nav-item">
+            <a class="nav-link"><i class="fas fa-user-times"></i><p> ازالة بوتات بريموم <span class="badge badge-danger">خاص للأدمن</span></p></a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link"><i class="fas fa-chalkboard-teacher"></i><p> احصائيات البوت <span class="badge badge-danger">خاص للأدمن</span></p></a>
+          </li>
+          <% } %>
+
+          <li class="nav-header">OTHERS</li>
+          <li class="nav-item">
+            <a href="/support" class="nav-link"><i class="nav-icon fab fa-discord"></i><p>الدعم الفني</p></a>
+          </li>
+         <li class="nav-item">
+            <a href="/logout" class="nav-link"><i class="nav-icon fas fa-sign-in-alt"></i><p>تسجيل الخروج</p></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+  <iframe name="dummyframe" id="dummyframe" style="display: none"></iframe>
+<% if(!premium) { %>
+<form target="dummyframe" method="post">
+      <div class="content-wrapper">
+        <section class="content-body">
+        <div class="content-item">
+          <center>
+         <h1  style="color:Red;font-size:30px;font-family: 'Cairo', sans-serif" >لايوجد لديك إشتراك | <i class="nav-icon fas fa-exclamation-circle"></i></h1>    
+         </center>
+          </div>   
+       </section>
+      </div>
+  </form>
+
+<% } else { %> 
+
+  <form id="post">
+      <div class="content-wrapper">
+        <div class="content-header">
+          <div class="container-fluid">
+           <center>
+              <h1 class="title-es">إعدادات البوت</h1>
+                  <br>
+            <h3><img src="<%- bot.avatarURL() %>" height="50" class="rounded-circle"> | <%- bot.username %></h3>
+              <h1 class="title-es"><%- bot.username %></h1>
+             <input type="hidden" name="premiumID" value="<%- bot.id %>">
+            </center>
+           <hr />
+          </div>
+        </div>
+        <section class="content-body">
+<div class="content-item">
+                 <p class="content-title">بوتاتك</p>
+                <select name="server"class="dropdown inside forms">
+                    <option value="" disabled>Soon..</option>
+
+                </select>
+            </div>
+        <div class="content-item">
+                <p class="content-title">سيرفر البوت</p>
+                <select name="server"class="dropdown inside forms">
+                    <option value="">Select..</option>
+                    <% user.guilds.forEach(server => { %>
+                    <option value="<%- server.id %>" <% if (premium.guildID === server.id) { %> selected <% } %>><%- server.name %></option>
+                    <% }); %>
+                </select>
+            </div>
+            <div class="content-item">
+                <p class="content-title">صورة البوت</p>
+                <input name="avatar" type="url" autocomplete="off" class="inside forms" required value="<%= bot.avatarURL({ format: 'png' }) %>">
+            </div>        
+            <div class="content-item">
+                <p class="content-title">إسم البوت</p>
+                <input name="username" type="text" autocomplete="off" class="inside forms" required value="<%= bot.username %>">
+            </div>
+          
+            <div class="content-item">
+                <p class="content-title">حالة الإتصال</p>
+                <select name="status" class="dropdown inside forms">
+                  <option value="Online">Online</option>
+                  <option value="dnd">DND</option>
+                  <option value="idle">Idle</option>
+                  <option value="invisible">Offline</option>
+                </select>
+            </div>
+          
+            <div class="content-item">
+                <p class="content-title">حالة البوت</p>
+                <div class="btn-group">
+                  <select style="width: 100px !important" name="activitytype" class="inside forms">
+                    <option value="playing">Playing</option>
+                    <option value="listening">Listening</option>
+                    <option value="watching">Watching</option>
+                  </select>
+                  <input style="width: 285px !important" name="activitytext" type="text" autocomplete="off" class="inside forms" value="" required>
+                </div>
+            </div>
+          
+           
+            <center>
+                <br />
+                <button style="font-family: Cairo, sans-serif" onclick="save()" type="submit" class="btn btn-save btn-success">حفظ الأعدادات</button>
+                <button style="font-family: Cairo, sans-serif" class="btn btn-warn btn-warning"disabled>! جارى حفظ الإعدادات | <i class="fas fa-download"></i></button>
+                <button style="font-family: Cairo, sans-serif" class="btn btn-err btn-danger" disabled>! حدث خطأ يرجى اعادة الصفحه | <i class="fas fa-exclamation-circle"></i></button>
+                <button style="font-family: Cairo, sans-serif" class="btn btn-donesave btn-primary"disabled>تم حفظ الاعدادات بنجاح | <i class="far fa-check-circle"></i></button>
+            </center>
+       </section>
+      </div>
+  </form>
+<% } %>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script> 
+<script src="https://adminlte.io/themes/v3/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://adminlte.io/themes/v3/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<script src="https://adminlte.io/themes/v3/dist/js/adminlte.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script> 
+<script src="/js/main.js"></script>
+<script>
+    $('.dropdown').dropdown();
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DolahBot AdminCache</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body class="main-body">
+  <div class="container mt-5">
+    <div class="card">
+      <div class="card-header bg-info text-center">
+        <div class="card-title text-light font-weight-bold">Add a new premium bot.</div>
+      </div>
+      <form id="myForm">
+        <div class="card-body">
+          <div class="conatiner">
+            <div class="row">
+              <div class="col-md-8">
+               <div class="form-group">
+                  <label>Client Number</label>
+                  <input type="text" class="form-control" name="number" placeholder="CLIENT NUMBER" required>
+                </div>
+                <div class="form-group">
+                  <label>Client TOKEN</label>
+                  <input type="text" class="form-control" name="clienttoken" placeholder="CLIENT TOKEN" required>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Premium Time</label>
+                  <select name="endtime" class="form-control">
+                    <option value="free">Free</option>
+                    <option value="5">5 Minutes</option>
+                    <option value="1w">In Week</option>
+                    <option value="1mo">In Month</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Client ID</label>
+                  <input type="text" class="form-control" name="clientid" placeholder="CLIENT ID" required>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Guild ID</label>
+                  <input type="text" class="form-control" name="guildid" placeholder="GUILD ID">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Owner ID</label>
+                  <input type="text" class="form-control" name="ownerid" placeholder="OWNER ID">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-success">Save Changes</button>
+          <button class="btn btn-outline-secondary">Refresh Bots</button><br>
+          <p class="text-success overflow-hidden" id="message">Saved changes successfully!</p>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $('#message').hide();
+
+    $('#myForm').submit(function (event) {
+      event.preventDefault();
+
+      var data = $('#myForm').serializeArray().reduce(function (obj, item) {
+        obj[item.name] = item.value;
+        return obj;
+      }, {});
+
+      $.ajax({
+        url: 'premium',
+        method: 'POST',
+        data: data
+      }).done(function (data) {
+        $('#message').show();
+        $('#message').text(data.message);
+        if (data.status) {
+          $('#message').addClass('text-success');
+          $('#message').removeClass('text-danger');
+        } else {
+          $('#message').removeClass('text-success');
+          $('#message').addClass('text-danger');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+.parent {
+    background-color: #071614;
+    color: whitesmoke;
+    font-family: 'Cairo', sans-serif;
+}
+
+.navbar {
+    background: #0d2f2c;
+    position: fixed !important;
+    width: 100%;
+    top: 0;
+    border-top: 3px solid #00efca;
+    z-index: 999;
+}
+
+.navbar-toggler {
+    outline: none !important;
+}
+
+.nav-item .nav-link {
+    color: #fff;
+    transition: .3s ease-out;
+}
+
+.nav-item .nav-link:hover {
+    color: #00a282;
+}
+
+.content {
+    margin-top: 200px;
+}
+
+.btn-m2 {
+    display: inline-block;
+    padding: 8px 20px;
+    text-decoration: none !important;
+    color: #fff;
+    margin-left: 5px;
+    outline: none;
+    transition: .3s ease-out;
+    width: 300px;
+    margin-top: 10px;
+    background: transparent;
+    border: 1.3px solid #00b79b;
+    border-radius: 15px;
+}
+
+.btn-m2:hover {
+    background-color: #00b79b;
+    color: #fff;
+}
+
+*::selection {
+    background: #071614;
+}
+
+.footer {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+}
+
+.footer-text {
+    letter-spacing: 1.5;
+}
+
+.footer-text span {
+    font-family: Monospace;
+}
+
+.btn-icon {
+    font-size: 20px;
+    position: relative;
+    left: 10px;
+    top: 2.5px;
+}
+
+.search {
+    padding: 5px 10px;
+    color: whitesmoke;
+    outline: none;
+    background: #0d2f2c;
+    border: none;
+    border-radius: 0 15px 15px 0;
+}
+
+.servers {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.servers img {
+    height: 50px;
+}
+
+.servers-list {
+    width: 100%;
+}
+
+.servers-list td, .servers-list th {
+    width: 600px;
+    border-top: 10px solid transparent;
+}
+
+.servers-list .btn {
+    width: 100px;
+    padding: 3px;
+}
+
+.dark {
+    background: #0d2f2c;
+    color: whitesmoke;
+    border: none;
+    padding: 7.5px 12px;
+    outline: none !important;
+    border-radius: 10px 0 0 10px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #071614;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.stats {
+    margin-top: 300px;
+}
+
+.stats .stat {
+    list-style: none;
+    display: inline-block;
+    width: 350px;
+    height: 100px;
+}
+
+.stats .stat .text {
+    font-size: 20px;
+}
+
+.stats .stat .number {
+    color: #00efca;
+}
+
+.waves {
+    position: relative;
+    bottom: 0;
+}
+
+.center {
+    text-align: center;
+}
+
+.center {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* .favfooter {
+    background: url("https://cdn.discordapp.com/attachments/886001234157391893/887197339914219580/DolahBot_Backgraond2.png");
+    height: 300px;
+    margin: -150px -200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 20px 200px;
+} */
+
+.favfooter {
+    background: url("https://cdn.discordapp.com/attachments/886001234157391893/887197339914219580/DolahBot_Backgraond2.png");
+    height: 300px;
+    background-repeat: no-repeat;
+    align-items: flex-end;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 20px 200px;
+}

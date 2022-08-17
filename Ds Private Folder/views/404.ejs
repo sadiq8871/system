@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DolahBot - Dashboard</title>
+    <meta name="viewport" content="width=device-width, intial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Meta tags -->
+    <meta name="title" content="DolahBot">
+    <meta name="og:title" content="DolahBot">
+    <meta name="description" content="افضل بوت لخدمة سيرفرات قراند / تفعيل - سجن - بنك - حقيبة .">
+    <meta name="og:description" content="افضل بوت لخدمة سيرفرات قراند / تفعيل - سجن - بنك - حقيبة .">
+    <meta name="og:image" content="https://i8.ae/2Sme9">
+    <meta name="image" content="https://i8.ae/2Sme9">
+    <meta name="theme-color" content="#00efca">
+    <meta name="og:theme-color" content="#00efca">
+    <link rel="icon" type="image/png" href="https://i8.ae/2Sme9"/>
+  </head>
+  <body class="parent hold-transition">
+    <nav class="navbar navbar-expand-lg">
+      <a href="/">
+        <img class="rounded-circle" style="width: 50px; height: 50px; margin-right: .7rem;" src="https://i8.ae/2Sme9">
+      </a>
+      <a style="color:#00efca">DolahBot</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars text-white"></i></button>
+      <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/support">الدعم الفني</a>
+          </li>
+        </ul>
+        <% if (!user) { %>
+        <ul class="navbar-right" style="margin-right: 2pc;">
+          <li class="nav-item" style="list-style-type: none;">
+            <a class="nav-link" href="/login">تسجيل دخول | <i class="fas fa-sign-in-alt"></i></a>
+          </li>
+        </ul>
+        <% } else { %>
+        <ul class="navbar-right" style="margin-right: 2pc;">
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img height="28" style="border-radius: 50%" src="<%- user.avatarURL %>"> <%- user.username %></a>
+            <div class="dropdown-menu bg-dark" style="color: white!important" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item text-light" href="/dashboard"><i class="nav-icon fas fa-cog"></i> | لوحة التحكم</a>
+              <div class="dropdown-divider"></div>
+              <a style="color: #ff0000 !important" class="dropdown-item" href="/logout"><i class="fas fa-sign-in-alt"></i> | تسجيل خروج</a>
+            </div>
+          </div>
+        </ul>
+        <% } %>
+      </div>
+    </nav>
+    <hr />
+    <section class="content">
+      <center>
+        <p style="font-size: 60px;font-weight: bold">404</p>
+        <span>
+          <code>Page is not found! <a href="/">Back To Home.</a></code>
+        </span>
+      </center>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="/js/main.js"></script>
+    
+  </body>
+</html>
